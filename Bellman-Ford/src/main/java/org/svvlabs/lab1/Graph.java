@@ -6,9 +6,9 @@ import java.util.List;
 /**
  * Represents a directed graph using an edge list.
  */
-class Graph {
-    int vertices;
-    List<Edge> edges;
+public class Graph {
+    public int vertices;
+    public List<Edge> edges;
 
     public Graph(int vertices) {
         this.vertices = vertices;
