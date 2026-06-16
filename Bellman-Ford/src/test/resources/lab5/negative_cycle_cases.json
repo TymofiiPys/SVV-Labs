@@ -1,0 +1,54 @@
+[
+  {
+    "description": "3-cycle with total weight -3: 1→2(-1), 2→3(-1), 3→1(-1)",
+    "vertices": 4,
+    "source": 0,
+    "edges": [
+      [0, 1,  1],
+      [1, 2, -1],
+      [2, 3, -1],
+      [3, 1, -1]
+    ]
+  },
+  {
+    "description": "simple 2-node negative cycle: 0→1(1), 1→0(-3)",
+    "vertices": 2,
+    "source": 0,
+    "edges": [
+      [0, 1,  1],
+      [1, 0, -3]
+    ]
+  },
+  {
+    "description": "negative cycle not involving source – still detected",
+    "vertices": 5,
+    "source": 0,
+    "edges": [
+      [0, 1, 1],
+      [1, 2, 1],
+      [2, 3, -4],
+      [3, 1,  1]
+    ]
+  },
+  {
+    "description": "negative self-loop on vertex 0",
+    "vertices": 3,
+    "source": 0,
+    "edges": [
+      [0, 0, -1],
+      [0, 1,  5]
+    ]
+  },
+  {
+    "description": "large negative cycle spanning all vertices",
+    "vertices": 5,
+    "source": 0,
+    "edges": [
+      [0, 1, -1],
+      [1, 2, -1],
+      [2, 3, -1],
+      [3, 4, -1],
+      [4, 0, -1]
+    ]
+  }
+]

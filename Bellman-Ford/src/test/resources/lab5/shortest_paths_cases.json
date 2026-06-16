@@ -1,0 +1,131 @@
+[
+  {
+    "description": "positive weights – classic 5-vertex graph from source 0",
+    "vertices": 5,
+    "source": 0,
+    "edges": [
+      [0, 1, 4],
+      [0, 2, 2],
+      [1, 3, 2],
+      [1, 4, 3],
+      [2, 1, 1],
+      [2, 3, 4],
+      [2, 4, 5]
+    ],
+    "expectedDistances": [0, 3, 2, 5, 6]
+  },
+  {
+    "description": "indirect route preferred over heavy direct edge",
+    "vertices": 3,
+    "source": 0,
+    "edges": [
+      [0, 1, 10],
+      [0, 2,  1],
+      [2, 1,  1]
+    ],
+    "expectedDistances": [0, 2, 1]
+  },
+  {
+    "description": "negative weights without cycle – standard 5-vertex graph",
+    "vertices": 5,
+    "source": 0,
+    "edges": [
+      [0, 1, -1],
+      [0, 2,  4],
+      [1, 2,  3],
+      [1, 3,  2],
+      [1, 4,  2],
+      [3, 2,  5],
+      [3, 1,  1],
+      [4, 3, -3]
+    ],
+    "expectedDistances": [0, -1, 2, -2, 1]
+  },
+  {
+    "description": "negative edge beats positive direct path",
+    "vertices": 3,
+    "source": 0,
+    "edges": [
+      [0, 1, -4],
+      [1, 2,  3],
+      [0, 2, 10]
+    ],
+    "expectedDistances": [0, -4, -1]
+  },
+  {
+    "description": "non-zero source – vertex 0 unreachable from source 1",
+    "vertices": 3,
+    "source": 1,
+    "edges": [
+      [0, 1, 1],
+      [1, 2, 2]
+    ],
+    "expectedDistances": [2147483647, 0, 2]
+  },
+  {
+    "description": "last vertex as source – only one successor reachable",
+    "vertices": 4,
+    "source": 2,
+    "edges": [
+      [0, 1, 3],
+      [1, 2, 4],
+      [2, 3, 5]
+    ],
+    "expectedDistances": [2147483647, 2147483647, 0, 5]
+  },
+  {
+    "description": "single vertex – distance to itself is 0",
+    "vertices": 1,
+    "source": 0,
+    "edges": [],
+    "expectedDistances": [0]
+  },
+  {
+    "description": "two vertices no edges – destination unreachable",
+    "vertices": 2,
+    "source": 0,
+    "edges": [],
+    "expectedDistances": [0, 2147483647]
+  },
+  {
+    "description": "disconnected graph – components 0-1 and 2-3 separate",
+    "vertices": 4,
+    "source": 0,
+    "edges": [
+      [0, 1, 5],
+      [2, 3, 2]
+    ],
+    "expectedDistances": [0, 5, 2147483647, 2147483647]
+  },
+  {
+    "description": "parallel edges – lighter one wins",
+    "vertices": 2,
+    "source": 0,
+    "edges": [
+      [0, 1, 10],
+      [0, 1,  2]
+    ],
+    "expectedDistances": [0, 2]
+  },
+  {
+    "description": "complete 3-vertex graph – indirect path cheaper than direct",
+    "vertices": 3,
+    "source": 0,
+    "edges": [
+      [0, 1, 1],
+      [0, 2, 5],
+      [1, 2, 2]
+    ],
+    "expectedDistances": [0, 1, 3]
+  },
+  {
+    "description": "zero-weight edges – all reachable at cost 0",
+    "vertices": 3,
+    "source": 0,
+    "edges": [
+      [0, 1, 0],
+      [1, 2, 0]
+    ],
+    "expectedDistances": [0, 0, 0]
+  }
+]
